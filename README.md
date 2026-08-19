@@ -29,15 +29,26 @@ public/images/             Logos y fotos reales (extraídos del prototipo)
 
 ### Nota sobre "Formatos de Video"
 
-La sección **Formatos de Video** (Ventas / Educativos / IA / UGC / Aspiracional / Generales)
-tiene 6 espacios por categoría para videos de ejemplo — en el prototipo original ninguno se
-había subido todavía, así que hoy se muestran como placeholders oscuros ("Sube un video").
-Para completarlos:
+Los 25 videos reales viven en `public/videos/caso-N/`, comprimidos a 720p (desde los
+originales en `~/Desktop/PÁGINA WEB`, 1.7GB → 97MB). Mapeo carpeta → categoría del sitio:
 
-1. Agrega los clips/imagenes a `public/images/` (ej. `caso-1-1.mp4` o `.jpg`).
-2. En `src/views/HomeView.vue`, busca el grupo `data-caso="1"` (Ventas), `data-caso="2"`
-   (Educativos), etc., y reemplaza el `<div class="caso-slide-empty">...</div>` correspondiente
-   por un `<img>` (o `<video>`) apuntando al archivo.
+| Carpeta original | Categoría (tab) | data-caso | # videos |
+|---|---|---|---|
+| `1. Ventas` | Ventas | 1 | 6 |
+| `2. Educativos` | Educativos | 2 | 4 |
+| `3. Producto` | — (sin tab en el sitio) | 3 | 0 |
+| `4. IA` | IA | 4 | 2 |
+| `5. UGC` | UGC | 5 | 1 |
+| `6. Aspiracional` | Aspiracional | **7** | 3 |
+| `7. Generales` | Generales | **6** | 9 |
+
+⚠️ Los últimos dos están cruzados a propósito: el nombre de la carpeta en Desktop no
+coincidía con el `data-caso` que usa el sitio (Generales=6, Aspiracional=7 en el HTML).
+Si agregas más videos, respeta el `data-caso`, no el número de la carpeta.
+
+Para agregar/reemplazar un video: colócalo en `public/videos/caso-N/` y agrega/edita el
+`<video src="/videos/caso-N/X.mp4" controls playsinline preload="metadata">` correspondiente
+en `src/views/HomeView.vue`.
 
 ## 1. Desarrollo local
 
@@ -99,3 +110,31 @@ Para generar `FIREBASE_SERVICE_ACCOUNT`:
 
 Con eso, cada push a `main` publica el sitio solo. No necesitas correr `firebase deploy`
 a mano nunca más.
+
+## 6. Dominio personalizado: video.marcatexto.mx
+
+El DNS de `marcatexto.mx` está en **GoDaddy** (mismo lugar donde ya apuntaste
+`crm.marcatexto.mx` a Firebase Hosting — este proceso es idéntico, solo que a un
+proyecto de Firebase nuevo y dedicado a esta landing).
+
+1. **Deploy manual primero** (necesitas un sitio ya publicado antes de poder agregarle
+   dominio): sección 3 de este README.
+2. En [Firebase Console](https://console.firebase.google.com) → tu proyecto → **Hosting**
+   → **Agregar dominio personalizado** → escribe `video.marcatexto.mx`.
+3. Firebase te da un registro **TXT** para verificar que eres dueño del dominio. Agrégalo
+   en GoDaddy: **Mi cuenta → Dominios → marcatexto.mx → DNS → Agregar registro** → Tipo
+   `TXT`, Nombre el que te indique Firebase (normalmente `@` o `video`), Valor el que te
+   dé Firebase. Guarda.
+4. Vuelve a Firebase Console y confirma la verificación (puede tardar unos minutos).
+5. Firebase te muestra entonces los registros **A** (o CNAME, según el caso) que debes
+   agregar para el subdominio `video`. En GoDaddy: mismo lugar, Tipo `A`, Nombre `video`,
+   Valor la(s) IP(s) exactas que te muestre Firebase en ese momento (no uses IPs de otra
+   fuente — Firebase las asigna por proyecto y pueden cambiar).
+6. Espera la propagación de DNS (minutos a un par de horas) y el certificado SSL
+   automático de Firebase (Let's Encrypt, hasta 24h la primera vez, normalmente mucho
+   menos). Cuando el estado en Firebase Console diga "Conectado", `https://video.marcatexto.mx`
+   ya sirve el sitio.
+7. Repite los secrets de GitHub (sección 5) con el **Project ID de este proyecto nuevo**
+   para que el deploy automático siga funcionando — el dominio personalizado no cambia
+   nada del workflow, solo necesita que `FIREBASE_PROJECT_ID`/`FIREBASE_SERVICE_ACCOUNT`
+   apunten al proyecto correcto.
