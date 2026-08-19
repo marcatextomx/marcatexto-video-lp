@@ -12,6 +12,77 @@
     </div>
   </section>
 
+  <!-- ============ FORMATOS DE VIDEO ============ -->
+  <section id="casos" class="section section-tint fmt-section">
+    <div class="wrap">
+      <div class="fmt-card reveal">
+        <div class="fmt-tabs-col">
+          <h2 class="h2 fmt-title" style="font-size: 40px; max-width: 100%; height: 145px; width: 259px">Formatos de Video</h2>
+          <div class="fmt-tabs">
+            <button class="fmt-tab is-on" type="button" data-caso="6">Generales</button>
+            <button class="fmt-tab" type="button" data-caso="1">Ventas</button>
+            <button class="fmt-tab" type="button" data-caso="2">Educativos</button>
+            <button class="fmt-tab" type="button" data-caso="4">IA</button>
+            <button class="fmt-tab" type="button" data-caso="5">UGC</button>
+            <button class="fmt-tab" type="button" data-caso="7">Aspiracional</button>
+          </div>
+        </div>
+        <div class="fmt-view">
+          <div class="fmt-stage-row">
+            <button class="caso-arrow fmt-prev" type="button" data-cdir="-1" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <div class="fmt-phone">
+              <div class="caso-stage" id="fmtStage">
+                <div class="caso-group" data-caso="1">
+                  <div class="caso-slide"><video src="/videos/caso-1/1.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-1/2.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-1/3.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-1/4.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-1/5.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-1/6.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                </div>
+                <div class="caso-group" data-caso="2">
+                  <div class="caso-slide"><video src="/videos/caso-2/1.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-2/2.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-2/3.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-2/4.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                </div>
+                <div class="caso-group" data-caso="3">
+                  <div class="caso-slide"><div class="caso-slide-empty"><span>Próximamente</span></div></div>
+                </div>
+                <div class="caso-group" data-caso="4">
+                  <div class="caso-slide"><video src="/videos/caso-4/1.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-4/2.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                </div>
+                <div class="caso-group" data-caso="5">
+                  <div class="caso-slide"><video src="/videos/caso-5/1.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                </div>
+                <div class="caso-group" data-caso="6">
+                  <div class="caso-slide"><video src="/videos/caso-6/1.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/2.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/3.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/4.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/5.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/6.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/7.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/8.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/9.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                </div>
+                <div class="caso-group" data-caso="7">
+                  <div class="caso-slide"><video src="/videos/caso-7/1.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-7/2.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-7/3.mp4" playsinline preload="metadata" disablePictureInPicture disableRemotePlayback></video></div>
+                </div>
+              </div>
+              <button class="fmt-expand" type="button" aria-label="Ver en pantalla completa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4M15 3h4a2 2 0 0 1 2 2v4M9 21H5a2 2 0 0 1-2-2v-4M15 21h4a2 2 0 0 0 2-2v-4"/></svg></button>
+            </div>
+            <button class="caso-arrow fmt-next" type="button" data-cdir="1" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+          <div class="caso-dots" id="fmtDots"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ INSTRUCTOR ============ -->
   <section id="instructor" class="section inst4">
     <div class="wrap">
@@ -45,77 +116,6 @@
           <img src="/images/logo-7.webp" alt="Logo" class="logo-slot" style="object-fit:contain;">
           <img src="/images/logo-8.webp" alt="Logo" class="logo-slot" style="object-fit:contain;">
           <img src="/images/logo-9.webp" alt="Logo" class="logo-slot" style="object-fit:contain;">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FORMATOS DE VIDEO ============ -->
-  <section id="casos" class="section section-tint fmt-section">
-    <div class="wrap">
-      <div class="fmt-card reveal">
-        <div class="fmt-tabs-col">
-          <h2 class="h2 fmt-title" style="font-size: 40px; max-width: 100%; height: 145px; width: 259px">Formatos de Video</h2>
-          <div class="fmt-tabs">
-            <button class="fmt-tab" type="button" data-caso="6">Generales</button>
-            <button class="fmt-tab is-on" type="button" data-caso="1">Ventas</button>
-            <button class="fmt-tab" type="button" data-caso="2">Educativos</button>
-            <button class="fmt-tab" type="button" data-caso="4">IA</button>
-            <button class="fmt-tab" type="button" data-caso="5">UGC</button>
-            <button class="fmt-tab" type="button" data-caso="7">Aspiracional</button>
-          </div>
-        </div>
-        <div class="fmt-view">
-          <div class="fmt-stage-row">
-            <button class="caso-arrow fmt-prev" type="button" data-cdir="-1" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
-            <div class="fmt-phone">
-              <div class="caso-stage" id="fmtStage">
-                <div class="caso-group" data-caso="1">
-                  <div class="caso-slide"><video src="/videos/caso-1/1.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-1/2.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-1/3.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-1/4.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-1/5.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-1/6.mp4" controls playsinline preload="metadata"></video></div>
-                </div>
-                <div class="caso-group" data-caso="2">
-                  <div class="caso-slide"><video src="/videos/caso-2/1.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-2/2.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-2/3.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-2/4.mp4" controls playsinline preload="metadata"></video></div>
-                </div>
-                <div class="caso-group" data-caso="3">
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Próximamente</span></div></div>
-                </div>
-                <div class="caso-group" data-caso="4">
-                  <div class="caso-slide"><video src="/videos/caso-4/1.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-4/2.mp4" controls playsinline preload="metadata"></video></div>
-                </div>
-                <div class="caso-group" data-caso="5">
-                  <div class="caso-slide"><video src="/videos/caso-5/1.mp4" controls playsinline preload="metadata"></video></div>
-                </div>
-                <div class="caso-group" data-caso="6">
-                  <div class="caso-slide"><video src="/videos/caso-6/1.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-6/2.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-6/3.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-6/4.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-6/5.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-6/6.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-6/7.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-6/8.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-6/9.mp4" controls playsinline preload="metadata"></video></div>
-                </div>
-                <div class="caso-group" data-caso="7">
-                  <div class="caso-slide"><video src="/videos/caso-7/1.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-7/2.mp4" controls playsinline preload="metadata"></video></div>
-                  <div class="caso-slide"><video src="/videos/caso-7/3.mp4" controls playsinline preload="metadata"></video></div>
-                </div>
-              </div>
-              <button class="fmt-expand" type="button" aria-label="Ver en pantalla completa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4M15 3h4a2 2 0 0 1 2 2v4M9 21H5a2 2 0 0 1-2-2v-4M15 21h4a2 2 0 0 0 2-2v-4"/></svg></button>
-            </div>
-            <button class="caso-arrow fmt-next" type="button" data-cdir="1" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
-          </div>
-          <div class="caso-dots" id="fmtDots"></div>
         </div>
       </div>
     </div>
@@ -202,9 +202,6 @@
       <div class="plans-specs reveal">
         <p class="plans-specs-line" style="font-size: 11.5px; width: 629px; height: 33px">IVA Incluido. Contrato de 3 meses. El material se graba en una jornada de hasta 8 horas deproducción<br>cada 3 meses en Hermosillo, Sonora. No incluye talentos, props, modelos, ni renta de locaciones.</p>
       </div>
-      <div class="plans-cta reveal">
-        <a class="btn btn--wacta btn--lg" href="https://wa.me/526624761370?text=Hola%2C%20quiero%20contratar%20un%20plan%20de%20video" target="_blank" rel="noopener">Contratar</a>
-      </div>
     </div>
   </section>
 
@@ -220,6 +217,9 @@
         <details class="faq"><summary>¿Qué equipo usan?<span class="sign"></span></summary><div class="ans"><p>Usamos:</p><ul class="faq-needs"><li>75% cámara profesional</li><li>25% celular de alta gama</li><li>Micrófonos, iluminación, estabilizadores y drone cuando el proyecto lo requiere.</li></ul></div></details>
         <details class="faq"><summary>¿Todos los videos incluyen IA?<span class="sign"></span></summary><div class="ans"><p>No. La IA se cotiza por separado, según el proyecto.</p></div></details>
         <details class="faq"><summary>¿Pueden hacer video institucional o cobertura de eventos?<span class="sign"></span></summary><div class="ans"><p>Sí, pero se cotiza como servicio independiente al plan mensual.</p></div></details>
+      </div>
+      <div class="plans-cta reveal">
+        <a class="btn btn--wacta btn--lg" href="https://wa.me/526624761370?text=Hola%2C%20quiero%20contratar%20un%20plan%20de%20video" target="_blank" rel="noopener">Contratar</a>
       </div>
     </div>
   </section>

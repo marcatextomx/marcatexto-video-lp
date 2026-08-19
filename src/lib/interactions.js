@@ -391,7 +391,7 @@
   })();
 
   /* --- modal de casos: carrusel por marca --- */
-  /* --- formatos de video: tabs + stage inline --- */
+  /* --- formatos de video: tabs + stage inline (estilo Reels/TikTok) --- */
   (function(){
     var stage = document.getElementById('fmtStage'); if(!stage) return;
     var dotsWrap = document.getElementById('fmtDots');
@@ -400,6 +400,29 @@
     var active = null, idx = 0;
 
     function slides(g){ return [].slice.call(g.children); }
+
+    /* --- reproducción exclusiva: nunca dos videos a la vez --- */
+    function allVideos(){ return [].slice.call(stage.querySelectorAll('video')); }
+    function currentVideo(){
+      if (!active) return null;
+      var slide = slides(active)[idx];
+      return slide ? slide.querySelector('video') : null;
+    }
+    function pauseAllVideos(){ allVideos().forEach(function(v){ v.pause(); }); }
+    function playCurrentFromStart(){
+      var v = currentVideo(); if (!v) return;
+      pauseAllVideos();
+      v.currentTime = 0;
+      var p = v.play();
+      if (p && p.catch) p.catch(function(){});
+    }
+    /* tap/click sobre el video: pausa/reanuda (sin controles nativos) */
+    stage.addEventListener('click', function(e){
+      var v = e.target.closest ? e.target.closest('video') : null;
+      if (!v) return;
+      if (v.paused) v.play(); else v.pause();
+    });
+
     function place(){
       if(!active) return;
       active.style.transform = 'translateX(' + (-idx * 100) + '%)';
@@ -410,11 +433,12 @@
       slides(active).forEach(function(_,i){
         var b = document.createElement('button'); b.type='button'; b.className='caso-dot';
         b.setAttribute('aria-label','Video '+(i+1));
-        b.addEventListener('click', function(){ idx=i; place(); });
+        b.addEventListener('click', function(){ idx=i; place(); playCurrentFromStart(); });
         dotsWrap.appendChild(b);
       });
     }
     function show(id){
+      pauseAllVideos();
       active = stage.querySelector('.caso-group[data-caso="'+id+'"]'); if(!active) return;
       groups.forEach(function(g){ g.style.display = (g===active) ? 'flex' : 'none'; });
       idx = 0; active.style.transition = 'none'; place();
@@ -422,19 +446,51 @@
       buildDots();
       tabs.forEach(function(t){ t.classList.toggle('is-on', t.getAttribute('data-caso')===id); });
     }
-    function step(dir){ var n = slides(active).length; idx = (idx + dir + n) % n; place(); }
+    function step(dir){
+      var n = slides(active).length; idx = (idx + dir + n) % n; place();
+      playCurrentFromStart();
+    }
 
     tabs.forEach(function(t){ t.addEventListener('click', function(){ show(t.getAttribute('data-caso')); }); });
     document.querySelectorAll('.fmt-prev,.fmt-next').forEach(function(a){
       a.addEventListener('click', function(){ step(parseInt(a.getAttribute('data-cdir'),10)); });
     });
+
+    /* --- pantalla completa personalizada: 9:16 real, sin deformar, fondo negro --- */
+    var phone = document.querySelector('.fmt-phone');
     var expandBtn = document.querySelector('.fmt-expand');
-    if (expandBtn) expandBtn.addEventListener('click', function(){
-      var phone = document.querySelector('.fmt-phone');
-      if (phone.requestFullscreen) phone.requestFullscreen();
-    });
+    if (expandBtn && phone) {
+      var overlay = document.createElement('div');
+      overlay.className = 'fmt-fullscreen-overlay';
+      var closeBtn = document.createElement('button');
+      closeBtn.type = 'button'; closeBtn.className = 'fmt-fs-close'; closeBtn.setAttribute('aria-label', 'Cerrar pantalla completa');
+      closeBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+      overlay.appendChild(closeBtn);
+      document.body.appendChild(overlay);
+      var phoneHome = phone.parentNode, phoneNext = phone.nextSibling;
+
+      function openFS(){
+        overlay.insertBefore(phone, closeBtn);
+        phone.classList.add('is-fullscreen');
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeFS(){
+        if (phoneNext) phoneHome.insertBefore(phone, phoneNext); else phoneHome.appendChild(phone);
+        phone.classList.remove('is-fullscreen');
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+      expandBtn.addEventListener('click', openFS);
+      closeBtn.addEventListener('click', closeFS);
+      overlay.addEventListener('click', function(e){ if (e.target === overlay) closeFS(); });
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeFS();
+      });
+    }
+
     window.addEventListener('resize', place);
-    show('1');
+    show('6'); /* Generales por default */
   })();
 
   /* --- reseñas: carrusel manual (flechas + arrastrar) --- */

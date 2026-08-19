@@ -965,14 +965,22 @@ section{ position:relative; }
 .fmt-tab.is-on{ background:var(--blue-050); color:var(--blue); border-left-color:var(--blue); }
 .fmt-view{ position:relative; display:flex; flex-direction:column; align-items:center; gap:14px; min-width:0; width:100%; }
 .fmt-stage-row{ position:relative; display:flex; align-items:center; justify-content:center; gap:16px; min-width:0; width:fit-content; margin-inline:auto; max-width:100%; }
-.fmt-prev{ left:14px; } .fmt-next{ right:14px; }
-.fmt-prev:hover{ transform:translateY(-50%) translateX(-2px); } .fmt-next:hover{ transform:translateY(-50%) translateX(2px); }
+/* las flechas viven fuera del mockup del teléfono: children normales del flex,
+   nunca position:absolute sobre el video (evita taparlo) */
+.fmt-prev,.fmt-next{ position:static; top:auto; transform:none; flex:0 0 auto; }
+.fmt-prev:hover{ transform:translateX(-2px); } .fmt-next:hover{ transform:translateX(2px); }
 .fmt-phone{ position:relative; width:320px; max-width:80vw; aspect-ratio:9/16; height:auto; max-height:75vh; border-radius:26px; overflow:hidden; box-shadow:var(--shadow-lg); background:#0d1117; }
 .fmt-phone .caso-stage{ width:100%; height:100%; border-radius:0; }
 .fmt-phone .caso-group{ height:100%; }
 .fmt-phone .caso-slide{ aspect-ratio:auto; height:100%; }
 .fmt-phone .caso-slide img{ background:#171c26; }
 .fmt-phone .caso-slide img{ color:rgba(255,255,255,.65); }
+.caso-slide video{ cursor:pointer; -webkit-tap-highlight-color:transparent; }
+/* sin controles nativos en ningún navegador (el atributo controls ya no se usa,
+   esto es un cinturón-y-tirantes extra) */
+.caso-slide video::-webkit-media-controls,
+.caso-slide video::-webkit-media-controls-panel,
+.caso-slide video::-webkit-media-controls-start-playback-button{ display:none !important; -webkit-appearance:none; }
 .fmt-expand{ position:absolute; right:14px; bottom:14px; width:38px; height:38px; border-radius:10px; border:none; cursor:pointer; background:rgba(13,17,23,.55); color:#fff; display:grid; place-items:center; z-index:3; transition:background .18s; }
 .fmt-expand:hover{ background:rgba(13,17,23,.8); }
 .fmt-expand svg{ width:18px; height:18px; }
@@ -984,7 +992,28 @@ section{ position:relative; }
   .fmt-tab + .fmt-tab{ border-top:none; }
   .fmt-tab.is-on{ border-left-color:transparent; border-bottom-color:var(--blue); }
   .fmt-phone{ height:60vh; }
+  .fmt-stage-row{ gap:8px; }
 }
+
+/* ---------- Formatos de video: pantalla completa personalizada (9:16, sin deformar) ---------- */
+.fmt-fullscreen-overlay{
+  display:none; position:fixed; inset:0; z-index:9999;
+  background:#000; align-items:center; justify-content:center;
+}
+.fmt-fullscreen-overlay.is-open{ display:flex; }
+.fmt-phone.is-fullscreen{
+  position:relative;
+  width:min(100vw, calc(100vh * 9 / 16));
+  height:min(100vh, calc(100vw * 16 / 9));
+  max-width:none; max-height:none; border-radius:0; box-shadow:none;
+}
+.fmt-phone.is-fullscreen .fmt-expand{ display:none; }
+.fmt-fs-close{
+  position:fixed; top:18px; right:18px; z-index:10000; width:44px; height:44px; border-radius:50%; border:none; cursor:pointer;
+  background:rgba(255,255,255,.92); color:var(--ink); box-shadow:var(--shadow); display:grid; place-items:center; transition:background .18s;
+}
+.fmt-fs-close:hover{ background:#fff; }
+.fmt-fs-close svg{ width:20px; height:20px; }
 
 /* ---------- Botón flotante WhatsApp ---------- */
 .wa-float{ position:fixed; right:clamp(16px,3.5vw,28px); bottom:clamp(16px,3.5vw,28px); z-index:110;
