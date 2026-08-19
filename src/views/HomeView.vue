@@ -71,60 +71,44 @@
             <div class="fmt-phone">
               <div class="caso-stage" id="fmtStage">
                 <div class="caso-group" data-caso="1">
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
+                  <div class="caso-slide"><video src="/videos/caso-1/1.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-1/2.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-1/3.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-1/4.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-1/5.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-1/6.mp4" controls playsinline preload="metadata"></video></div>
                 </div>
                 <div class="caso-group" data-caso="2">
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
+                  <div class="caso-slide"><video src="/videos/caso-2/1.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-2/2.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-2/3.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-2/4.mp4" controls playsinline preload="metadata"></video></div>
                 </div>
                 <div class="caso-group" data-caso="3">
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
+                  <div class="caso-slide"><div class="caso-slide-empty"><span>Próximamente</span></div></div>
                 </div>
                 <div class="caso-group" data-caso="4">
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
+                  <div class="caso-slide"><video src="/videos/caso-4/1.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-4/2.mp4" controls playsinline preload="metadata"></video></div>
                 </div>
                 <div class="caso-group" data-caso="5">
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
+                  <div class="caso-slide"><video src="/videos/caso-5/1.mp4" controls playsinline preload="metadata"></video></div>
                 </div>
                 <div class="caso-group" data-caso="6">
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/1.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/2.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/3.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/4.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/5.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/6.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/7.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/8.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-6/9.mp4" controls playsinline preload="metadata"></video></div>
                 </div>
                 <div class="caso-group" data-caso="7">
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
-                  <div class="caso-slide"><div class="caso-slide-empty"><span>Sube un video</span></div></div>
+                  <div class="caso-slide"><video src="/videos/caso-7/1.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-7/2.mp4" controls playsinline preload="metadata"></video></div>
+                  <div class="caso-slide"><video src="/videos/caso-7/3.mp4" controls playsinline preload="metadata"></video></div>
                 </div>
               </div>
               <button class="fmt-expand" type="button" aria-label="Ver en pantalla completa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4M15 3h4a2 2 0 0 1 2 2v4M9 21H5a2 2 0 0 1-2-2v-4M15 21h4a2 2 0 0 0 2-2v-4"/></svg></button>
