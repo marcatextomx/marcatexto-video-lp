@@ -456,8 +456,13 @@
       a.addEventListener('click', function(){ step(parseInt(a.getAttribute('data-cdir'),10)); });
     });
 
-    /* --- pantalla completa personalizada: 9:16 real, sin deformar, fondo negro --- */
+    /* --- pantalla completa personalizada: 9:16 real, sin deformar, fondo negro,
+       con flechas y selector de formato flotando encima (mismos elementos/handlers
+       de la página, solo reubicados mientras dura la pantalla completa) --- */
     var phone = document.querySelector('.fmt-phone');
+    var prevBtn = document.querySelector('.fmt-prev');
+    var nextBtn = document.querySelector('.fmt-next');
+    var tabsCol = document.querySelector('.fmt-tabs-col');
     var expandBtn = document.querySelector('.fmt-expand');
     if (expandBtn && phone) {
       var overlay = document.createElement('div');
@@ -467,16 +472,30 @@
       closeBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
       overlay.appendChild(closeBtn);
       document.body.appendChild(overlay);
-      var phoneHome = phone.parentNode, phoneNext = phone.nextSibling;
+
+      /* recuerda de dónde sacamos cada elemento para regresarlo tal cual al cerrar.
+         Usa un nodo-marcador (en vez de guardar el nextSibling) porque varios de
+         estos elementos son hermanos entre sí: si uno ya se movió, el nextSibling
+         guardado de otro deja de ser hijo real de su padre y insertBefore truena. */
+      function mover(el){
+        if (!el) return null;
+        var marker = document.createComment('fs-anchor');
+        el.parentNode.insertBefore(marker, el);
+        return {
+          moveIn: function(){ overlay.insertBefore(el, closeBtn); },
+          moveOut: function(){ marker.parentNode.insertBefore(el, marker); }
+        };
+      }
+      var movers = [mover(tabsCol), mover(prevBtn), mover(phone), mover(nextBtn)].filter(Boolean);
 
       function openFS(){
-        overlay.insertBefore(phone, closeBtn);
+        movers.forEach(function(m){ m.moveIn(); });
         phone.classList.add('is-fullscreen');
         overlay.classList.add('is-open');
         document.body.style.overflow = 'hidden';
       }
       function closeFS(){
-        if (phoneNext) phoneHome.insertBefore(phone, phoneNext); else phoneHome.appendChild(phone);
+        movers.forEach(function(m){ m.moveOut(); });
         phone.classList.remove('is-fullscreen');
         overlay.classList.remove('is-open');
         document.body.style.overflow = '';

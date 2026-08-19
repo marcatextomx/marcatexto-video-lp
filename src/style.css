@@ -1015,6 +1015,38 @@ section{ position:relative; }
 .fmt-fs-close:hover{ background:#fff; }
 .fmt-fs-close svg{ width:20px; height:20px; }
 
+/* flechas prev/next flotando sobre los bordes de la pantalla (mismo botón/función
+   que en la página, solo reposicionado mientras dura la pantalla completa) */
+.fmt-fullscreen-overlay .fmt-prev,
+.fmt-fullscreen-overlay .fmt-next{
+  position:fixed; top:50%; transform:translateY(-50%); z-index:10000;
+}
+.fmt-fullscreen-overlay .fmt-prev:hover{ transform:translateY(-50%) translateX(-2px); }
+.fmt-fullscreen-overlay .fmt-next:hover{ transform:translateY(-50%) translateX(2px); }
+.fmt-fullscreen-overlay .fmt-prev{ left:14px; }
+.fmt-fullscreen-overlay .fmt-next{ right:14px; }
+
+/* selector de formatos (Generales/Ventas/…): panel flotante del lado izquierdo */
+.fmt-fullscreen-overlay .fmt-tabs-col{
+  position:fixed; left:14px; top:14px; z-index:10000; height:auto;
+  background:rgba(17,20,28,.6); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+  border-radius:var(--r-lg); padding:10px 6px; box-shadow:var(--shadow-lg);
+}
+.fmt-fullscreen-overlay .fmt-title{ display:none; }
+/* siempre columna vertical y compacta, sin importar el ancho de viewport
+   (anula el flex-direction:row que .fmt-tabs usa en la tarjeta a <820px) */
+.fmt-fullscreen-overlay .fmt-tabs{ display:flex; flex-direction:column; flex-wrap:nowrap; justify-content:flex-start; min-width:150px; }
+.fmt-fullscreen-overlay .fmt-tab{ color:rgba(255,255,255,.72); text-align:left; border-left:3px solid transparent; border-bottom:none; border-radius:0 var(--r) var(--r) 0; padding:10px 14px; }
+.fmt-fullscreen-overlay .fmt-tab + .fmt-tab{ border-top:1px solid rgba(255,255,255,.12); }
+.fmt-fullscreen-overlay .fmt-tab:hover{ background:rgba(255,255,255,.1); color:#fff; }
+.fmt-fullscreen-overlay .fmt-tab.is-on{ background:rgba(255,255,255,.16); color:#fff; border-left-color:#fff; }
+@media (max-width:480px){
+  .fmt-fullscreen-overlay .fmt-tabs-col{ left:8px; top:8px; padding:8px 4px; }
+  .fmt-fullscreen-overlay .fmt-tabs{ min-width:120px; }
+  .fmt-fullscreen-overlay .fmt-tab{ font-size:14px; padding:10px 12px; }
+  .fmt-fullscreen-overlay .fmt-prev{ left:6px; } .fmt-fullscreen-overlay .fmt-next{ right:6px; }
+}
+
 /* ---------- Botón flotante WhatsApp ---------- */
 .wa-float{ position:fixed; right:clamp(16px,3.5vw,28px); bottom:clamp(16px,3.5vw,28px); z-index:110;
   width:60px; height:60px; border-radius:50%; background:#25D366; color:#fff; display:grid; place-items:center;
